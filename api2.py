@@ -10,7 +10,7 @@ class Clima():
 
     def obtener_clima(self, city):
         self.city = city
-        self.url = f"https://api.openweathermap.org/data/2.5/weather?q={self.city}&appid={self.api_key}&units=metric"
+        self.url = f"https://api.openweathermap.org/data/2.5/forecast?q={self.city}&appid={self.api_key}&units=metric&cnt=7"
         res = requests.get(self.url)
         data = res.json()
 
@@ -18,5 +18,4 @@ class Clima():
         self.description = data["weather"][0]["description"]
         self.humidity = data["main"]["humidity"]
 
-        self.todas = (self.temp,self.description,self.humidity)
-        print(self.todas)
+
