@@ -15,6 +15,7 @@ class Clima():
         data = res.json()
 
         self.temp = data["main"]["temp"]
+        
         self.description = data["weather"][0]["description"]
         self.humidity = data["main"]["humidity"]
 
